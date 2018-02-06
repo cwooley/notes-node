@@ -1,0 +1,19 @@
+{
+  "name": "notes",
+  "version": "1.0.0",
+  "description": "notes app for node course",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cwooley/notes-node.git"
+  },
+  "author": "Charles Wooley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cwooley/notes-node/issues"
+  },
+  "homepage": "https://github.com/cwooley/notes-node#readme"
+}
