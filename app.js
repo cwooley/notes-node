@@ -7,34 +7,50 @@ const notes = require('./notes.js')
 
 // argv[2] is always the first command
 
-const argv = yargs.argv
+const argv = yargs
+.command('add', 'add a note', {
+  title:{
+    describe: "Title of your note",
+    demand: true,
+    alias: 't'
+  },
+  body:{
+    describe: "Contents of your note",
+    demand: true,
+    alias: 'b'
+  }
+})
+.command('list', 'list all notes')
+.command('read', 'read a note', {
+  title:{
+    describe: "Title of your note",
+    demand: true,
+    alias: 't'
+  },
+})
+.command('remove', 'remove a note', {
+  title:{
+    describe: "Title of your note",
+    demand: true,
+    alias: 't'
+  },
+})
+.help()
+.argv
 
 var command = yargs.argv._[0]
 
 if (command === 'add'){
   //do add stuff
-  if (argv.title && argv.body){
     notes.addNote(argv.title, argv.body)
-  } else {
-    console.log("please supply a title with --title and body with --body")
-  }
 } else if (command === 'list'){
   // do list stuff
   notes.listNotes()
 } else if (command === 'read'){
-  if (argv.title){
     notes.getNote(argv.title)
-  } else {
-    console.log("please supply a title with --title")
-  }
-
 }
 else if (command === 'remove'){
-  if (argv.title){
     notes.removeNote(argv.title)
-  } else {
-    console.log("please supply a title with --title")
-  }
 } else {
   console.log('command not recognized')
 }
