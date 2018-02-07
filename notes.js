@@ -1,6 +1,6 @@
 
 
-
+// should probally have all console logs in app.js but whatever.
 const fs = require('fs');
 
 var fetchNotes = ()=>{
